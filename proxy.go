@@ -18,6 +18,9 @@ const (
 )
 
 var (
+	Commit  = ""
+	BuiltAt = ""
+
 	ProxyProto string
 	ProxyTo    string
 	BucketName string
@@ -107,7 +110,7 @@ func main() {
 		ProxyProto = _proxyProto
 	}
 
-	logrus.Infof("Version: %s", Version)
+	logrus.Infof("Version: %s, Commit: %s, BuiltAt: %s", Version, Commit, BuiltAt)
 	logrus.Infof("Proxying on port %s to %s://%s", ServerPort, ProxyProto, ProxyTo)
 	logrus.Infof("Using bucket: %s", BucketName)
 
